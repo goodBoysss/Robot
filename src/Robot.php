@@ -109,6 +109,7 @@ class Robot
      * @desc: 构建文本消息body
      * @param $text
      * @param $robotType
+     * @param $option
      * @return array
      * User: zhanglinxiao<zhanglinxiao@tianmtech.cn>
      * DateTime: 2023/02/27 13:27
@@ -165,6 +166,7 @@ class Robot
      * @desc: 构建markdown消息body
      * @param $content
      * @param $robotType
+     * @param $option
      * @return array
      * User: zhanglinxiao<zhanglinxiao@tianmtech.cn>
      * DateTime: 2023/02/27 13:27
@@ -310,7 +312,7 @@ class Robot
      * 发送文本消息
      * @param string|array|int $text
      * @param array $option
-     *          string robot_url 机器人地址，默认取env  QYWX_ROBOT_URL
+     *          string robot_url 机器人地址，默认取env  ROBOT_URL
      *          array at_mobile_list at用户手机号列表
      *          bool at_all_mobile 是否@all表示提醒所有人
      * @return array
@@ -336,9 +338,9 @@ class Robot
 
     /**
      * 发送markdown消息
-     * @param string $content #### 杭州天气 \n > 9度，西北风1级，空气良89，相对温度73%\n > ![screenshot](https://img.alicdn.com/tfs/TB1NwmBEL9TBuNjy1zbXXXpepXa-2400-1218.png)\n > ###### 10点20分发布 [天气](https://www.dingtalk.com) \n
+     * @param string $content 例子：#### 杭州天气 \n > 9度，西北风1级，空气良89，相对温度73%\n > ![screenshot](https://img.alicdn.com/tfs/TB1NwmBEL9TBuNjy1zbXXXpepXa-2400-1218.png)\n > ###### 10点20分发布 [天气](https://www.dingtalk.com) \n
      * @param array $option
-     *          string robot_url 机器人地址，默认取env  QYWX_ROBOT_URL
+     *          string robot_url 机器人地址，默认取env配置的ROBOT_URL
      *          array at_mobile_list at用户手机号列表
      *          bool at_all_mobile 是否@all表示提醒所有人
      * @return array
@@ -370,7 +372,7 @@ class Robot
      *          string url 跳转链接
      *          string pic_url 图片url 飞书要传图片上传后的key
      * @param array $option
-     *          string robot_url 机器人地址，默认取env  QYWX_ROBOT_URL
+     *          string robot_url 机器人地址，默认取env  ROBOT_URL
      *          array at_mobile_list at用户手机号列表
      *          bool at_all_mobile 是否@all表示提醒所有人
      * @return array
@@ -672,7 +674,7 @@ class Robot
 
 
     /**
-     * 请求飞书API
+     * 请求API
      * @param $body
      * @param $robotUrl
      * @param $robotType
