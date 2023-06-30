@@ -1,0 +1,17 @@
+{
+  "name": "tianmiao/robot",
+  "autoload": {
+    "psr-4": {
+      "Tianmiao\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "zhanglx",
+      "email": "zhanglx92@163.com"
+    }
+  ],
+  "require": {
+    "php": "^5.6.0"
+  }
+}
